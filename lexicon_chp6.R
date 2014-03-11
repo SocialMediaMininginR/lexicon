@@ -324,10 +324,10 @@ require(ggplot2)
 # examine the distribution of opinion relating to economic conditions 
 # the labeling assumes here that you imported the summary file of three years
 BB.boxplot<- ggplot(BB.sentiment, aes(x = BB.sentiment$year, 
-                                      y = BB.sentiment$centered, group = BB.text$year)) + 
+                                      y = BB.sentiment$centered, group = BB.sentiment$year)) + 
   
-  geom_boxplot(aes(fill = BB.sentiment$year), outlier.colour = "black", outlier.shape = 16, outlier.size = 2) 
-
+geom_boxplot(aes(fill = "grey80"), outlier.colour = "black", outlier.shape = 16, outlier.size = 2) +
+guides(fill=FALSE)
 # add labels to our boxplot using xlab (“Year”), ylab(“Sentiment(Centered)”), and ggtitle             
 # (“Economic Sentiment - Beige Book (1996-2013)”)
 BB.boxplot<- BB.boxplot + xlab("Year") + ylab("Sentiment (Centered)") +
