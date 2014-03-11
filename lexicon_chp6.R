@@ -32,15 +32,15 @@ https_function("https://raw2.github.com/SocialMediaMininginR/sentiment_function/
 # note: you will substitute your directory for destination file locations
 # On Windows machines you may have to disregard the method argument 
 
-download.file("https://raw.github.com/SocialMediaMininginR/pos_words/master/positive-words.txt", destfile = "/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/pos_words.txt", method = "curl")
-download.file("https://raw.github.com/SocialMediaMininginR/pos_words/master/LoughranMcDonald_pos.csv", destfile = "/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/LoughranMcDonald_pos.txt", method = "curl")
+download.file("https://raw.github.com/SocialMediaMininginR/pos_words/master/positive-words.txt", destfile = "/yourdirectory/pos_words.txt", method = "curl")
+download.file("https://raw.github.com/SocialMediaMininginR/pos_words/master/LoughranMcDonald_pos.csv", destfile = "/yourdirectory/LoughranMcDonald_pos.txt", method = "curl")
 
 # import positive lexicons from your local directory defined in earlier step
-pos<- scan(file.path("/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1", 'pos_words.txt'), what = 'character', 
+pos<- scan(file.path("/yourdirectory/casestudy1", 'pos_words.txt'), what = 'character', 
            comment.char = ';')
 
 # import financial positive lexicon from your local directory defined in earlier step
-pos_finance<- scan(file.path("/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1", 'LoughranMcDonald_pos.txt'), 
+pos_finance<- scan(file.path("/yourdirectory/casestudy1", 'LoughranMcDonald_pos.txt'), 
                    what = 'character', comment.char = ';')
 
 # combine both files into one
@@ -50,14 +50,14 @@ pos_all<- c(pos, pos_finance)
 # note: you will substitute your directory for destination file locations
 # On Windows machines you may have to disregard the method argument 
 
-download.file("https://raw2.github.com/SocialMediaMininginR/neg_words/master/negative-words.txt", destfile = "/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/neg_words.txt", method = "curl")
-download.file("https://raw.github.com/SocialMediaMininginR/neg_words/master/LoughranMcDonald_neg.csv", destfile = "/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/LoughranMcDonald_neg.txt", method = "curl")
+download.file("https://raw2.github.com/SocialMediaMininginR/neg_words/master/negative-words.txt", destfile = "/yourdirectory/neg_words.txt", method = "curl")
+download.file("https://raw.github.com/SocialMediaMininginR/neg_words/master/LoughranMcDonald_neg.csv", destfile = "yourdirectory/casestudy1/LoughranMcDonald_neg.txt", method = "curl")
 
 # import negative lexicons from your local directory defined in earlier step
-neg<- scan(file.path("/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1", 'neg_words.txt'), what = 'character', comment.char = ';')
+neg<- scan(file.path("/yourdirectory/casestudy1", 'neg_words.txt'), what = 'character', comment.char = ';')
 
 # import financial negative lexicon from your local directory defined in earlier step
-neg_finance<- scan(file.path("/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1", 'LoughranMcDonald_neg.txt'), 
+neg_finance<- scan(file.path("/yourdirectory/casestudy1", 'LoughranMcDonald_neg.txt'), 
                    what = 'character', comment.char = ';')
 
 # combine both files into one
@@ -69,8 +69,8 @@ neg_all<- c(neg, neg_finance)
 # bb_full.csv is sixteen years of data (1996 - 2011) 
 # BB_96_2013.csv is eighteen years of data (1996 - 2013)
 
-download.file("https://raw.github.com/SocialMediaMininginR/beigebook/master/BB_all.csv", destfile = "/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/BB.csv", method = "curl")
-BB <- read.csv("/Users/heimannrichard/Google Drive/Spatial Analysis UMBC/RCode/casestudy1/BB.csv", sep="|")
+download.file("https://raw.github.com/SocialMediaMininginR/beigebook/master/BB_all.csv", destfile = "/yourdirectory/casestudy1/BB.csv", method = "curl")
+BB <- read.csv("/yourdirectory/casestudy1/BB.csv", sep="|")
 
 # colnames(BB)
 # [1] "year""month""text"
